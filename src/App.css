@@ -227,6 +227,8 @@
   padding: 6px 12px;
   cursor: pointer;
   color: #ccc;
+  position: relative;
+  overflow: hidden;
 
   transition: 
     background 0.25s ease,
@@ -246,6 +248,18 @@
   color: #ac7f63;
   border-color: #ac7f63;
 }
+.filter-bar button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 136, 71, 0.08);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.filter-bar button:hover::after {
+  opacity: 1;
+}
 
 .pagination {
   display: flex;
@@ -255,13 +269,41 @@
 }
 
 .pagination button {
-  border: 1px solid #ccc;
-  padding: 6px 10px;
   background: none;
+  border: 1px solid #272727;
+  padding: 6px 12px;
   cursor: pointer;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
 }
 
 .pagination button.active {
   background: black;
-  color: white;
+  color: #f48847;
+  /* font-weight: 700; */
+  border-color: #f48847;
+  transform: scale(0.96);
+}
+.pagination button:hover {
+  color: #ac7f63;
+  border-color: #ac7f63;
+}
+.pagination button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 136, 71, 0.08);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.pagination button:hover::after {
+  opacity: 1;
 }
