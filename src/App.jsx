@@ -183,12 +183,37 @@ function ContactPage() {
     <SiteShell>
       <section className="page-intro">
         <h2>Contact</h2>
-        <h3>Available for freelance projects and collaborations.</h3>
+        <h3>Let’s create something worth watching.</h3>
       </section>
-      <section className="contact-stack">
-        <a href="mailto:hello@example.com">hello@example.com</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Instagram</a>
+
+      <section className="contact-grid">
+        {/* LEFT SIDE */}
+        <div className="contact-info">
+          <p>
+            Whether you’re working on a commercial, documentary, or something
+            experimental — I’m always open to collaborating on projects that
+            tell a story.
+          </p>
+
+          <p>
+            If you have a brief, timeline, or even just an idea, feel free to
+            reach out.
+          </p>
+
+          <div className="contact-direct">
+            <a href="mailto:hello@example.com">hello@example.com</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE (IMAGE PANEL) */}
+        <div className="contact-visual">
+          <img
+            src="/hero.png" // 
+            alt="Editing workspace or project still"
+          />
+        </div>
       </section>
     </SiteShell>
   )

@@ -1,5 +1,5 @@
 export default function FilterBar({ active, setActive }) {
-  const filters = ["all", "film", "corporate", "podcast", "short"];
+  const filters = ["all", "short", "podcast", "film", "corporate"];
 
   return (
     <div className="filter-bar">

@@ -307,3 +307,72 @@
 .pagination button:hover::after {
   opacity: 1;
 }
+
+/* Contacts page css */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* Left */
+.contact-info {
+  color: #d0d0d0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.contact-direct {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-direct a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: border-color 0.2s ease;
+}
+
+.contact-direct a:hover {
+  border-color: #f48847;
+}
+
+/* RIGHT SIDE IMAGE */
+.contact-visual {
+  border: 1px solid #2d2d2d;
+  background: #111;
+  overflow: hidden;
+}
+
+.contact-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* subtle hover like your video cards */
+.contact-visual:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-visual {
+    height: 300px;
+  }
+}
