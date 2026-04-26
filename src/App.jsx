@@ -1,4 +1,10 @@
 import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
+import { useState, useMemo } from "react"
+import { videos } from "./data/videos"
+import VideoCard from "./components/VideoCard"
+import FilterBar from "./components/FilterBar"
+import Pagination from "./components/Pagination"
+import "./App.css"
 
 function SiteShell({ children }) {
   return (
@@ -103,22 +109,51 @@ function HomePage() {
   )
 }
 
+const ITEMS_PER_PAGE = 12
 function WorkPage() {
+  const [activeFilter, setActiveFilter] = useState("all")
+  const [currentPage, setCurrentPage] = useState(1)
+
+  // 🔹 Filter videos
+  const filteredVideos = useMemo(() => {
+    if (activeFilter === "all") return videos
+    return videos.filter((v) => v.category === activeFilter)
+  }, [activeFilter])
+
+  // 🔹 Pagination logic
+  const totalPages = Math.ceil(filteredVideos.length / ITEMS_PER_PAGE)
+
+  const paginatedVideos = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE
+    return filteredVideos.slice(start, start + ITEMS_PER_PAGE)
+  }, [filteredVideos, currentPage])
+
+  // Reset page when filter changes
+  function handleFilterChange(filter) {
+    setActiveFilter(filter)
+    setCurrentPage(1)
+  }
+
   return (
     <SiteShell>
       <section className="page-intro">
         <h2>Selected Work</h2>
         <h3>Curated edits and motion projects.</h3>
       </section>
-      <section className="work-grid" aria-label="Projects">
-        {[1, 2, 3, 4, 5, 6].map((project) => (
-          <article className="work-card" key={project}>
-            <div className="work-thumb" aria-hidden="true" />
-            <h4>Project Title {project}</h4>
-            <p>Brand campaign · 202{project % 4} · 45-90 sec cut</p>
-          </article>
+
+      <FilterBar active={activeFilter} setActive={handleFilterChange} />
+
+      <section className="work-grid">
+        {paginatedVideos.map((video) => (
+          <VideoCard key={video.id} video={video} />
         ))}
       </section>
+
+      <Pagination
+        current={currentPage}
+        total={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </SiteShell>
   )
 }

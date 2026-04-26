@@ -182,3 +182,86 @@
     border-right-color: var(--border);
   }
 }
+
+
+/* Video Card design */
+.thumb-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.work-thumb {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-thumb {
+  transform: scale(1.05);
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 10px 14px;
+  pointer-events: none;
+}
+
+/* Filter and pagination minimal Css */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.filter-bar button {
+  background: none;
+  border: 1px solid #272727;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: #ccc;
+
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.15s ease;
+}
+
+.filter-bar button.active {
+  background: black;
+  color: #f48847;
+  /* font-weight: 700; */
+  border-color: #f48847;
+  transform: scale(0.96);
+}
+.filter-bar button:hover {
+  color: #ac7f63;
+  border-color: #ac7f63;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  background: none;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: black;
+  color: white;
+}
