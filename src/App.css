@@ -351,6 +351,7 @@
   border: 1px solid #2d2d2d;
   background: #111;
   overflow: hidden;
+  height: 250px;
 }
 
 .contact-visual img {

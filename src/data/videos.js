@@ -1,20 +1,22 @@
 export const videos = [
-    { id: "PlFHdbd0Oe4", title: "Featured Video 1", category: "corporate" },
-  { id: "j9z8GBW1nEA", title: "Featured Video 2", category: "corporate" },
-  { id: "j5qCe1Pj_N8", title: "Featured Video 3", category: "corporate" },
-
-  // Shorts
+  { id: "PlFHdbd0Oe4", title: "Vid 1", category: "sports" },
+  { id: "3vJfJ4vwVNs", title: "Vid 2", category: "sports" },
+  { id: "nhZCbZTYXqI", title: "Short 11", category: "sports" },
+  { id: "g7F0jtcjQLg", title: "Short 4", category: "sports" },
   { id: "AYkzjSDNE4o", title: "Short 1", category: "short" },
   { id: "W7Lw4mj72sg", title: "Short 2", category: "short" },
+
+  { id: "j9z8GBW1nEA", title: "Featured Vid 1", category: "corporate" },
+  { id: "j5qCe1Pj_N8", title: "Featured Vid 2", category: "corporate" },
+
+  // Shorts
   { id: "eMDX4Ythdhs", title: "Short 3", category: "short" },
-  { id: "g7F0jtcjQLg", title: "Short 4", category: "short" },
   { id: "R3XsHR9F2wI", title: "Short 5", category: "short" },
   { id: "Ku0jHO7_GjM", title: "Short 6", category: "short" },
   { id: "zR2QcH1uW2w", title: "Short 7", category: "short" },
   { id: "y9fbcopJCCQ", title: "Short 8", category: "short" },
   { id: "Zw7aE_-jE0E", title: "Short 9", category: "short" },
   { id: "fu0BhPleOLU", title: "Short 10", category: "short" },
-  { id: "nhZCbZTYXqI", title: "Short 11", category: "short" },
   { id: "YccPolWvD4I", title: "Short 12", category: "short" },
   { id: "ay0vlZqfl9M", title: "Short 13", category: "short" },
   { id: "0m8FvY5VsnQ", title: "Project 1", category: "film" },
@@ -45,4 +47,4 @@ export const videos = [
   { id: "Bn_CUDLvobk", title: "Project 26", category: "podcast" },
 
   // duplicate removed (t6608PiC-4w already exists)
-]
+];

@@ -4,6 +4,7 @@ import { videos } from "./data/videos";
 import VideoCard from "./components/VideoCard";
 import FilterBar from "./components/FilterBar";
 import Pagination from "./components/Pagination";
+import BrandCarousel from "./components/BrandCarousel";
 import "./App.css";
 
 function SiteShell({ children }) {
@@ -12,9 +13,7 @@ function SiteShell({ children }) {
       <header className="site-header-wrapper">
         <div className="site-header">
           <NavLink className="brand" to="/home-alex" aria-label="Home">
-            <span className="brand-mark" aria-hidden="true">
-              AB
-            </span>
+              <img src="/logo.png" alt="Logo" style={{ width: 100, height: 100, objectFit: 'contain', display: 'block' }} />
           </NavLink>
           <nav aria-label="Primary">
             <ul className="top-nav">
@@ -41,26 +40,37 @@ function SiteShell({ children }) {
 
       <footer className="site-footer">
         <div className="social-links" aria-label="Social media links">
-          <a href="#" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/abraham-k1" aria-label="LinkedIn">
             in
           </a>
-          <a href="#" aria-label="Instagram">
-            ig
+          <a href="https://t.me/Abraham_TEP" aria-label="Telegram">
+            Tg
           </a>
-          <a href="mailto:hello@example.com" aria-label="Email">
+          <a href="mailto:abrahamkorsamj23@gmail.com" aria-label="Email">
             @
           </a>
         </div>
-        <div className="footer-links">
+        {/* <div className="footer-links">
           <a href="#">Privacy Policy</a>
           <a href="/new-index">Contact</a>
-        </div>
+        </div> */}
       </footer>
     </div>
   );
 }
 
 function HomePage() {
+  // List of brand images from public/brands
+  const brandImages = [
+    "Gemini_Generated_Image_73qxdf73qxdf73qx-removebg-preview.png",
+    "Gemini_Generated_Image_9yd3jf9yd3jf9yd3-removebg-preview.png",
+    "Gemini_Generated_Image_rzo31grzo31grzo3-removebg-preview.png",
+    "IMG_20260427_051015_601-removebg-preview.png",
+    "IMG_20260427_052630_118-removebg-preview.png",
+    "IMG_20260427_053252_936-removebg-preview.png",
+    "Screenshot_20260427-050855-removebg-preview-removebg-preview.png",
+    "ab.png",
+  ];
   return (
     <SiteShell>
       <section className="home-grid">
@@ -123,6 +133,8 @@ function HomePage() {
           <h3>I look forward to working with you.</h3>
         </div>
       </section>
+      {/* Brand Carousel below main content, full width */}
+      <BrandCarousel images={brandImages} speed={40} />
     </SiteShell>
   );
 }
@@ -184,12 +196,17 @@ function ShowreelPage() {
         <h3>Editing and motion highlights.</h3>
       </section>
       <section className="showreel-panel" aria-label="Showreel preview">
-        <div className="video-frame">
-          <span>Showreel Placeholder</span>
+        <div className="modal-video-frame" style={{maxWidth: 1100, margin: "0 auto"}}>
+          <iframe
+            src="https://www.youtube.com/embed/RlUQoykpEeQ"
+            title="Showreel"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
         </div>
         <p>
-          Replace this section with your embedded video or hosted reel link when
-          you are ready.
+          This is my showreel. For more, check out my YouTube channel!
         </p>
       </section>
     </SiteShell>
@@ -219,16 +236,16 @@ function ContactPage() {
           </p>
 
           <div className="contact-direct">
-            <a href="mailto:hello@example.com">hello@example.com</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">Instagram</a>
+            <a href="mailto:abrahamkorsamj23@gmail.com">abrahamkorsamj23@gmail.com</a>
+            <a href="https://www.linkedin.com/in/abraham-tep">LinkedIn</a>
+            <a href="https://t.me/Abraham_TEP">Telegram</a>
           </div>
         </div>
 
         {/* RIGHT SIDE (IMAGE PANEL) */}
         <div className="contact-visual">
           <img
-            src="/hero.png" //
+            src="/contact.png" //
             alt="Editing workspace or project still"
           />
         </div>
