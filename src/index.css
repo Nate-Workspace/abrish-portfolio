@@ -1,3 +1,5 @@
+/* --- End Modal Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 /* --- Modal Video Frame --- */
 .modal-video-frame {
   width: 90vw;
@@ -71,8 +73,7 @@
   outline: 2px solid #f48847;
   outline-offset: 2px;
 }
-/* --- End Modal Styles --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* --- Brand Carousel Styles --- */
 .brand-carousel-section {
   padding: 2.5vw 0 2vw 0;
