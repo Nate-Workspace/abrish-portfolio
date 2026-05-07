@@ -1,46 +1,55 @@
-import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
-import { useState, useMemo } from "react"
-import { videos } from "./data/videos"
-import VideoCard from "./components/VideoCard"
-import FilterBar from "./components/FilterBar"
-import Pagination from "./components/Pagination"
-import "./App.css"
+import { NavLink, Navigate, Route, Routes } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { videos } from "./data/videos";
+import VideoCard from "./components/VideoCard";
+import FilterBar from "./components/FilterBar";
+import Pagination from "./components/Pagination";
+import "./App.css";
 
 function SiteShell({ children }) {
   return (
     <div className="">
-
       <header className="site-header-wrapper">
-        <div className='site-header'>
-        <NavLink className="brand" to="/home-alex" aria-label="Home">
-          <span className="brand-mark" aria-hidden="true">AB</span>
-        </NavLink>
-        <nav aria-label="Primary">
-          <ul className="top-nav">
-            <li>
-              <NavLink to="/home-alex">ABOUT</NavLink>
-            </li>
-            <li>
-              <NavLink to="/work2">WORK</NavLink>
-            </li>
-            <li>
-              <NavLink to="/showreel">SHOWREEL</NavLink>
-            </li>
-            <li>
-              <NavLink to="/new-index">CONTACT</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <div className="site-header">
+          <NavLink className="brand" to="/home-alex" aria-label="Home">
+            <span className="brand-mark" aria-hidden="true">
+              AB
+            </span>
+          </NavLink>
+          <nav aria-label="Primary">
+            <ul className="top-nav">
+              <li>
+                <NavLink to="/home-alex">ABOUT</NavLink>
+              </li>
+              <li>
+                <NavLink to="/work2">WORK</NavLink>
+              </li>
+              <li>
+                <NavLink to="/showreel">SHOWREEL</NavLink>
+              </li>
+              <li>
+                <NavLink to="/new-index">CONTACT</NavLink>
+              </li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <main id="main-content" className='site-shell'>{children}</main>
+      <main id="main-content" className="site-shell">
+        {children}
+      </main>
 
       <footer className="site-footer">
         <div className="social-links" aria-label="Social media links">
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Instagram">ig</a>
-          <a href="mailto:hello@example.com" aria-label="Email">@</a>
+          <a href="#" aria-label="LinkedIn">
+            in
+          </a>
+          <a href="#" aria-label="Instagram">
+            ig
+          </a>
+          <a href="mailto:hello@example.com" aria-label="Email">
+            @
+          </a>
         </div>
         <div className="footer-links">
           <a href="#">Privacy Policy</a>
@@ -48,7 +57,7 @@ function SiteShell({ children }) {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
 function HomePage() {
@@ -61,43 +70,52 @@ function HomePage() {
           </h2>
         </div>
 
-        <div className="home-image" aria-hidden="true" />
+        <div className="home-image">
+          <img src="/home-img.png" alt="Abraham K portfolio visual" />
+        </div>
 
         <div className="home-subtitle">
-          <h2>London-based freelance video editor.</h2>
+          <h2>Video editor and Cinematographer.</h2>
         </div>
 
         <div className="home-copy">
           <p>
-            I am a freelance video editor and motion graphics compositor.
-            London-based for the past 12 years, I specialise in short-form
-            content including music videos, commercials, comedic television and
-            documentaries. I am experienced in Premiere Pro, Resolve (colour
-            grading) and After Effects (motion graphics, rotoscoping, 3D camera
-            tracking, face tracking, text animation, and building 3D
-            environments.
+            I’m a video editor and cinematographer with around five years of
+            experience. I combine storytelling, marketing, and an understanding
+            of human psychology to create content that feels engaging and
+            intentional, not just visually appealing.
           </p>
           <p>
-            Over 4 years, I worked in-house at a global music label editing
-            music videos, documentaries, promos and live broadcasts for major
-            artists.
+            Over the years, I’ve worked on a range of projects including
+            documentaries, dramas, sitcoms, sports content, promo videos, and
+            podcast recaps. I also spend a lot of time creating short-form and
+            vertical content, adapting ideas to fit different platforms and
+            audiences.
           </p>
           <p>
-            I have worked extensively with broadcasters and digital publishers on
-            documentaries, commercials, short films, and comedic series.
+            I’ve collaborated with individuals and personal brands, helping them
+            grow their presence through consistent and targeted content. Through
+            that, I’ve developed a strong sense of what captures attention, what
+            keeps people watching, and how to shape content that actually
+            connects. I have attached a link to some of my outstanding work : - 
+            https://youtube.com/shorts/nhZCbZTYXqI?feature=share.
           </p>
           <p>
-            In addition, I have substantial interest in natural history and
-            travel storytelling. I am particularly adept at communicating complex
-            geopolitical and environmental concepts in an engaging and sometimes
-            comedic manner.
+            Alongside my creative work, I’ve also worked as a social media
+            manager and digital marketing manager. That experience changed the
+            way I approach editing. I don’t just focus on how something looks,
+            but also on how it performs — how it reaches people, how it holds
+            attention, and how it communicates a message clearly.
           </p>
           <p>
-            Represented by a post-production agency, I am available for
-            freelance projects.
+            I mainly work with Adobe Premiere Pro and After Effects, using them
+            as tools to support the story rather than drive it. For me, the goal
+            is always to keep things simple, intentional, and effective.
           </p>
           <p>
-            My reel is available here and download my CV here.
+            Lately, I’ve been especially interested in the relationship between
+            storytelling, marketing, and human behavior — and how small creative
+            choices can influence the way people feel and respond to content.
           </p>
         </div>
 
@@ -106,32 +124,32 @@ function HomePage() {
         </div>
       </section>
     </SiteShell>
-  )
+  );
 }
 
-const ITEMS_PER_PAGE = 12
+const ITEMS_PER_PAGE = 12;
 function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState("all")
-  const [currentPage, setCurrentPage] = useState(1)
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
 
   // 🔹 Filter videos
   const filteredVideos = useMemo(() => {
-    if (activeFilter === "all") return videos
-    return videos.filter((v) => v.category === activeFilter)
-  }, [activeFilter])
+    if (activeFilter === "all") return videos;
+    return videos.filter((v) => v.category === activeFilter);
+  }, [activeFilter]);
 
   // 🔹 Pagination logic
-  const totalPages = Math.ceil(filteredVideos.length / ITEMS_PER_PAGE)
+  const totalPages = Math.ceil(filteredVideos.length / ITEMS_PER_PAGE);
 
   const paginatedVideos = useMemo(() => {
-    const start = (currentPage - 1) * ITEMS_PER_PAGE
-    return filteredVideos.slice(start, start + ITEMS_PER_PAGE)
-  }, [filteredVideos, currentPage])
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredVideos.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredVideos, currentPage]);
 
   // Reset page when filter changes
   function handleFilterChange(filter) {
-    setActiveFilter(filter)
-    setCurrentPage(1)
+    setActiveFilter(filter);
+    setCurrentPage(1);
   }
 
   return (
@@ -155,7 +173,7 @@ function WorkPage() {
         onPageChange={setCurrentPage}
       />
     </SiteShell>
-  )
+  );
 }
 
 function ShowreelPage() {
@@ -175,7 +193,7 @@ function ShowreelPage() {
         </p>
       </section>
     </SiteShell>
-  )
+  );
 }
 
 function ContactPage() {
@@ -210,13 +228,13 @@ function ContactPage() {
         {/* RIGHT SIDE (IMAGE PANEL) */}
         <div className="contact-visual">
           <img
-            src="/hero.png" // 
+            src="/hero.png" //
             alt="Editing workspace or project still"
           />
         </div>
       </section>
     </SiteShell>
-  )
+  );
 }
 
 function App() {
@@ -229,7 +247,7 @@ function App() {
       <Route path="/new-index" element={<ContactPage />} />
       <Route path="*" element={<Navigate to="/home-alex" replace />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
