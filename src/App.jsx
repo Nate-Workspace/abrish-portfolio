@@ -151,7 +151,10 @@ function WorkPage() {
   }, [activeFilter]);
 
   // 🔹 Pagination logic
-  const totalPages = Math.ceil(filteredVideos.length / ITEMS_PER_PAGE);
+  const totalPages = Math.max(
+  1,
+  Math.ceil(filteredVideos.length / ITEMS_PER_PAGE)
+)
 
   const paginatedVideos = useMemo(() => {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -206,7 +209,7 @@ function ShowreelPage() {
           />
         </div>
         <p>
-          This is my showreel. For more, check out my YouTube channel!
+          This is my showreel. For more, check out my work!
         </p>
       </section>
     </SiteShell>
