@@ -1,3 +1,185 @@
+/* --- Universal Responsive Improvements --- */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  html { font-size: 15px; }
+}
+@media (max-width: 900px) {
+  html { font-size: 14px; }
+}
+@media (max-width: 600px) {
+  html { font-size: 13px; }
+}
+
+body, #root {
+  min-width: 0;
+}
+
+/* Header and Navigation */
+.site-header {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.site-header .brand img {
+  max-width: 60vw;
+  height: auto;
+  max-height: 56px;
+}
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    gap: 8px;
+  }
+  .site-header .brand img {
+    max-width: 44vw;
+    max-height: 40px;
+  }
+  .top-nav {
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+}
+
+/* Home Grid Responsive */
+@media (max-width: 900px) {
+  .home-grid {
+    display: block;
+    padding-top: 24px;
+  }
+  .home-image {
+    margin: 20px 0;
+    min-height: 320px;
+    height: 50vw;
+    max-height: 400px;
+  }
+  .home-title, .home-subtitle, .home-copy, .cv-row, .home-cta {
+    margin-bottom: 18px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+@media (max-width: 600px) {
+  .home-image {
+    min-height: 180px;
+    height: 40vw;
+    max-height: 220px;
+  }
+  .home-title h2, .home-subtitle h2, .home-cta h3 {
+    font-size: 1.2rem;
+  }
+  .cv-link {
+    font-size: 12px;
+  }
+}
+
+/* Work Grid Responsive */
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .work-card h3 {
+    font-size: 1rem;
+  }
+  .work-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Brand Carousel Responsive */
+@media (max-width: 700px) {
+  .brand-carousel-section {
+    padding: 4vw 0 3vw 0;
+  }
+  .brand-logo-wrapper {
+    min-width: 80px;
+    min-height: 40px;
+    padding: 0.5vw 0.5vw;
+  }
+  .brand-logo {
+    max-height: 32px;
+    max-width: 70px;
+  }
+}
+
+/* Modal and Video Frame Responsive */
+@media (max-width: 700px) {
+  .modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+    border-radius: 6px;
+    padding: 0;
+  }
+  .modal-video-frame {
+    width: 98vw;
+    max-width: 100vw;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* Contact Page Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .contact-visual {
+    height: 200px;
+    min-height: 120px;
+  }
+}
+@media (max-width: 600px) {
+  .contact-info {
+    font-size: 13px;
+  }
+  .contact-visual {
+    height: 120px;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 700px) {
+  .site-footer {
+    padding-top: 4vw;
+    padding-bottom: 6vw;
+  }
+  .social-links {
+    gap: 12px;
+    padding-top: 12px;
+  }
+  .footer-links {
+    gap: 8px;
+    margin-top: 12px;
+  }
+}
+
+/* FilterBar and Pagination Responsive */
+@media (max-width: 600px) {
+  .filter-bar, .pagination {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+  }
+  .filter-bar button, .pagination button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Typography scaling */
+@media (max-width: 400px) {
+  h2, .home-title h2, .home-subtitle h2, .home-cta h3 {
+    font-size: 1rem;
+  }
+}
+/* --- End Universal Responsive Improvements --- */
 /* --- End Modal Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 /* --- Modal Video Frame --- */
@@ -233,7 +415,8 @@ body {
 }
 
 .top-nav a.active {
-  font-weight: 700;
+  font-weight: 800;
+  color: #e06213;
 }
 
 .home-grid {
