@@ -88,7 +88,7 @@ function HomePage() {
       <section className="home-grid">
         <div className="home-title">
           <h2>
-            <a href="/showreel">Hi, I am Abraham K.</a>
+            <NavLink to="/showreel">Hi, I am Abraham K.</NavLink>
           </h2>
         </div>
 
@@ -119,12 +119,12 @@ function HomePage() {
             grow their presence through consistent and targeted content. Through
             that, I’ve developed a strong sense of what captures attention, what
             keeps people watching, and how to shape content that actually
-            connects. I have attached a link to some of my outstanding work : -
-            https://youtube.com/shorts/nhZCbZTYXqI?feature=share.
+            connects. I have attached a link to some of my outstanding work : - <b>
+            https://youtube.com/shorts/nhZCbZTYXqI</b>
           </p>
           <p>
-            Alongside my creative work, I’ve also worked as a social media
-            manager and digital marketing manager. That experience changed the
+            <b>Alongside my creative work, I’ve also worked as a social media
+            manager and digital marketing manager.</b> That experience changed the
             way I approach editing. I don’t just focus on how something looks,
             but also on how it performs — how it reaches people, how it holds
             attention, and how it communicates a message clearly.

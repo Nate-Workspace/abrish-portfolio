@@ -440,7 +440,7 @@ h2 {
 }
 
 .home-title h2 a {
-  color: inherit;
+  color: #e06213;
   text-decoration: none;
 }
 
@@ -472,6 +472,10 @@ h2 {
   grid-row: 2;
 }
 
+.home-subtitle h2 {
+  color: #e06213;
+}
+
 .home-copy {
   grid-column: 1 / span 12;
   grid-row: 3;
@@ -486,6 +490,10 @@ h2 {
 
 .home-copy a {
   color: #ffffff;
+}
+
+.home-copy b{
+  color: #e06213;
 }
 
 .cv-row {
