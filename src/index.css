@@ -305,6 +305,47 @@ h2 {
   color: #ffffff;
 }
 
+.cv-row {
+  grid-column: 1 / span 12;
+  margin-top: 12px;
+  padding-top: 28px;
+
+  border-top: 1px solid #232323;
+
+  display: flex;
+  align-items: center;
+}
+
+.cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #f1f1f1;
+  text-decoration: none;
+
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cv-link span {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.cv-link:hover {
+  color: #f48847;
+}
+
+.cv-link:hover {
+  transform: translate(0px, 2px);
+}
+
 .home-cta {
   grid-column: 1 / span 12;
   grid-row: 4;

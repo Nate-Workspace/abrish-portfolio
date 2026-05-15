@@ -13,7 +13,16 @@ function SiteShell({ children }) {
       <header className="site-header-wrapper">
         <div className="site-header">
           <NavLink className="brand" to="/home-alex" aria-label="Home">
-              <img src="/logo.png" alt="Logo" style={{ width: 100, height: 100, objectFit: 'contain', display: 'block' }} />
+            <img
+              src="/logo.png"
+              alt="Logo"
+              style={{
+                width: "auto",
+                height: 80,
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </NavLink>
           <nav aria-label="Primary">
             <ul className="top-nav">
@@ -40,7 +49,10 @@ function SiteShell({ children }) {
 
       <footer className="site-footer">
         <div className="social-links" aria-label="Social media links">
-          <a href="https://www.linkedin.com/in/abraham-k1" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/abraham-k1"
+            aria-label="LinkedIn"
+          >
             in
           </a>
           <a href="https://t.me/Abraham_TEP" aria-label="Telegram">
@@ -107,7 +119,7 @@ function HomePage() {
             grow their presence through consistent and targeted content. Through
             that, I’ve developed a strong sense of what captures attention, what
             keeps people watching, and how to shape content that actually
-            connects. I have attached a link to some of my outstanding work : - 
+            connects. I have attached a link to some of my outstanding work : -
             https://youtube.com/shorts/nhZCbZTYXqI?feature=share.
           </p>
           <p>
@@ -128,6 +140,17 @@ function HomePage() {
             choices can influence the way people feel and respond to content.
           </p>
         </div>
+        <div className="cv-row">
+          <a
+            className="cv-link"
+            href="https://drive.google.com/uc?export=download&id=1rhRFeBKI6H39iJKBGIZwv7zA-cKQMWP5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download CV
+            {/* <span>↓</span> */}
+          </a>
+        </div>
 
         <div className="home-cta">
           <h3>I look forward to working with you.</h3>
@@ -140,21 +163,64 @@ function HomePage() {
 }
 
 const ITEMS_PER_PAGE = 12;
+const featuredVideoIds = [
+  "AYkzjSDNE4o",
+  "W7Lw4mj72sg",
+  "nhZCbZTYXqI",
+  "Zw7aE_-jE0E",
+  "fu0BhPleOLU",
+  "Sp5JC3yRtiM",
+  "YccPolWvD4I",
+  "ay0vlZqfl9M",
+
+  "yasZBc72pmk",
+  "q0FCevcrNaY",
+  "AlB9D0RloBw",
+  "186JVOwfLLM",
+  "YQaWxl1ePWc",
+  "31BQl2eGcDs",
+  "ImyobUh-dVI",
+  "hwBqnNYKZQw",
+  "e_1-JhVOHHM",
+  "lk1UIiwV6Tg",
+];
 function WorkPage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
 
   // 🔹 Filter videos
   const filteredVideos = useMemo(() => {
-    if (activeFilter === "all") return videos;
+    // ALL CATEGORY
+    if (activeFilter === "all") {
+      const featured = [];
+      const remaining = [];
+
+      videos.forEach((video) => {
+        if (featuredVideoIds.includes(video.id)) {
+          featured.push(video);
+        } else {
+          remaining.push(video);
+        }
+      });
+
+      // sort featured according to your custom order
+      featured.sort(
+        (a, b) =>
+          featuredVideoIds.indexOf(a.id) - featuredVideoIds.indexOf(b.id),
+      );
+
+      return [...featured, ...remaining];
+    }
+
+    // NORMAL CATEGORY FILTER
     return videos.filter((v) => v.category === activeFilter);
   }, [activeFilter]);
 
   // 🔹 Pagination logic
   const totalPages = Math.max(
-  1,
-  Math.ceil(filteredVideos.length / ITEMS_PER_PAGE)
-)
+    1,
+    Math.ceil(filteredVideos.length / ITEMS_PER_PAGE),
+  );
 
   const paginatedVideos = useMemo(() => {
     const start = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -199,18 +265,19 @@ function ShowreelPage() {
         <h3>Editing and motion highlights.</h3>
       </section>
       <section className="showreel-panel" aria-label="Showreel preview">
-        <div className="modal-video-frame" style={{maxWidth: 1100, margin: "0 auto"}}>
+        <div
+          className="modal-video-frame"
+          style={{ maxWidth: 1100, margin: "0 auto" }}
+        >
           <iframe
-            src="https://www.youtube.com/embed/RlUQoykpEeQ"
+            src="https://www.youtube.com/embed/rKd0z93bOCg"
             title="Showreel"
             frameBorder="0"
             allow="autoplay; encrypted-media"
             allowFullScreen
           />
         </div>
-        <p>
-          This is my showreel. For more, check out my work!
-        </p>
+        <p>This is my showreel. For more, check out my work!</p>
       </section>
     </SiteShell>
   );
@@ -239,7 +306,9 @@ function ContactPage() {
           </p>
 
           <div className="contact-direct">
-            <a href="mailto:abrahamkorsamj23@gmail.com">abrahamkorsamj23@gmail.com</a>
+            <a href="mailto:abrahamkorsamj23@gmail.com">
+              abrahamkorsamj23@gmail.com
+            </a>
             <a href="https://www.linkedin.com/in/abraham-tep">LinkedIn</a>
             <a href="https://t.me/Abraham_TEP">Telegram</a>
           </div>
