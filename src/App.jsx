@@ -12,7 +12,7 @@ function SiteShell({ children }) {
     <div className="">
       <header className="site-header-wrapper">
         <div className="site-header">
-          <NavLink className="brand" to="/home-alex" aria-label="Home">
+          <NavLink className="brand" to="about" aria-label="About">
             <img
               src="/logo.png"
               alt="Logo"
@@ -27,16 +27,16 @@ function SiteShell({ children }) {
           <nav aria-label="Primary">
             <ul className="top-nav">
               <li>
-                <NavLink to="/home-alex">ABOUT</NavLink>
+                <NavLink to="/about">ABOUT</NavLink>
               </li>
               <li>
-                <NavLink to="/work2">WORK</NavLink>
+                <NavLink to="/work">WORK</NavLink>
               </li>
               <li>
                 <NavLink to="/showreel">SHOWREEL</NavLink>
               </li>
               <li>
-                <NavLink to="/new-index">CONTACT</NavLink>
+                <NavLink to="/contact">CONTACT</NavLink>
               </li>
             </ul>
           </nav>
@@ -309,7 +309,7 @@ function ContactPage() {
             <a href="mailto:abrahamkorsamj23@gmail.com">
               abrahamkorsamj23@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/abraham-tep">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/abraham-k1">LinkedIn</a>
             <a href="https://t.me/Abraham_TEP">Telegram</a>
           </div>
         </div>
@@ -329,12 +329,12 @@ function ContactPage() {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home-alex" replace />} />
-      <Route path="/home-alex" element={<HomePage />} />
-      <Route path="/work2" element={<WorkPage />} />
+      <Route path="/" element={<Navigate to="/about" replace />} />
+      <Route path="/about" element={<HomePage />} />
+      <Route path="/work" element={<WorkPage />} />
       <Route path="/showreel" element={<ShowreelPage />} />
-      <Route path="/new-index" element={<ContactPage />} />
-      <Route path="*" element={<Navigate to="/home-alex" replace />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="*" element={<Navigate to="/about" replace />} />
     </Routes>
   );
 }
